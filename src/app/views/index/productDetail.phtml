@@ -1,15 +1,29 @@
 <link rel="stylesheet" href="../../../public/assets/style2.css">
 <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
     <div class="row d-flex justify-content-center px-3">
-        <div class="card">
-            <h2 class="ml-auto mr-4 mt-3 mb-0"><?php echo $data->location->name?></h2>
-            <p class="ml-auto mr-4 mb-0 med-font"><?php echo $data->current->condition->text ?></p>
-            <h1 class="ml-auto mr-4 large-font"><?php echo $data->current->temp_c ?>&#176;C</h1>
-            <p class="time-font mb-0 ml-4 mt-auto"> <?php echo " ".date("H-i",strtotime($data->location->localtime)) ?></p>
-            <p class="ml-4 mb-4"><?php echo date("F j, Y",strtotime($data->location->localtime)) ?></p>
-        </div>
-    </div>
-   <div class = "justify-content-center d-flex  px-3">
-   <?php include('footer.phtml'); ?>
-   </div>
-</div>
+
+        <?php $time =  (int)date("H", strtotime($data->location->localtime));
+        if ($time < 11) { ?>
+            <div class="card text-body" style="background-image:url('https://images.unsplash.com/photo-1508717334315-37b159f24d04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vcm5pbmclMjBza3l8ZW58MHx8MHx8&w=1000&q=80')">
+            <?php  } else if ($time <= 15) { ?>
+                <div class="card text-white" style="background-image:url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/magic-noon-sky-sun-greece-chris-pappas.jpg') ">
+                <?php } else if ($time <= 18) { ?>
+                    <div class="card text-white" style="background-image:url('https://images.unsplash.com/photo-1558985039-0810bf498163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbmluZyUyMHNreXxlbnwwfHwwfHw%3D&w=1000&q=80') ">
+
+                    <?php } else { ?>
+
+                        <div class="card text-white" style="background-image: url('https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHR8ZW58MHx8MHx8&w=1000&q=80') ">
+
+                        <?php }  ?>
+
+                        <h2 class="ml-auto mr-4 mt-3 mb-0"><?php echo $data->location->name ?></h2>
+                        <p class="ml-auto mr-4 mb-0 med-font"><?php echo $data->current->condition->text ?></p>
+                        <h1 class="ml-auto mr-4 large-font"><?php echo $data->current->temp_c ?>&#176;C</h1>
+                        <p class="time-font mb-0 ml-4 mt-auto"> <?php echo " " . date("H-i", strtotime($data->location->localtime)) ?></p>
+                        <p class="ml-4 mb-4"><?php echo date("F j, Y", strtotime($data->location->localtime)) ?></p>
+                        </div>
+                    </div>
+                    <div class="justify-content-center d-flex  px-3">
+                        <?php include('footer.phtml'); ?>
+                    </div>
+                </div>

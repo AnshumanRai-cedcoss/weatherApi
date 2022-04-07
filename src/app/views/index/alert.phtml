@@ -5,7 +5,7 @@
 <?php 
 if (count($data)  > 0 )
 {  ?>
-    <h1 class="text-center text-danger">Alerts Here</h1>
+    <h1 class="text-center text-danger"><?php echo $data[0]["event"]?></h1>
   
 <div class="row">
 
@@ -32,11 +32,6 @@ if (count($data)  > 0 )
 
 <p><b class="text-success">Category</b>:<?php echo $data[0]["category"]?></p>
 </div>
-
-<div class="row">
-<p><b class="text-success">Disaster Type</b>:<?php echo $data[0]["event"]?></p>
-</div>
-
 
 <div class="row">
 <p><b class="text-success">Message for specific areas</b>:<?php echo $data[0]["note"]?></p>
