@@ -1,0 +1,65 @@
+
+<div class="d-flex justify-content-center">
+<?php include('footer.phtml'); ?>
+</div>
+<?php 
+if (count($data)  > 0 )
+{  ?>
+    <h1 class="text-center text-danger">Alerts Here</h1>
+  
+<div class="row">
+
+<p><b class="text-success">Message:</b><?php echo $data[0]["headline"]?></p>
+</div>
+
+<div class="row">
+
+<p><b class="text-success">Message type:</b><?php echo $data[0]["msgtype"]?></p>
+</div>
+<div class="row">
+<p><b class="text-success">Severity:</b><?php echo $data[0]["severity"]?></p>
+</div>
+
+<div class="row">
+<p><b class="text-success">Urgency:</b><?php echo $data[0]["urgency"]?></p>
+</div>
+
+<div class="row">
+<p><b class="text-success">Areas Effetcted:</b><?php echo $data[0]["areas"]?></p>
+</div>
+
+<div class="row">
+
+<p><b class="text-success">Category</b>:<?php echo $data[0]["category"]?></p>
+</div>
+
+<div class="row">
+<p><b class="text-success">Disaster Type</b>:<?php echo $data[0]["event"]?></p>
+</div>
+
+
+<div class="row">
+<p><b class="text-success">Message for specific areas</b>:<?php echo $data[0]["note"]?></p>
+</div>
+  
+
+<div class="row">
+<p><b class="text-success">Starting from</b>:<?php echo date("Y-m-d H:i", strtotime($data[0]["effective"]))?></p>
+</div>
+  
+
+<div class="row">
+<p><b class="text-success">Ends on</b>:<?php echo date("Y-m-d H:i", strtotime($data[0]["expires"]))?></p>
+</div>
+ 
+
+<div class="row">
+<h3 class="text-center text-primary">News</h3>
+<p><?php echo $data[0]["desc"]?></p>
+</div>
+
+<?php } else 
+{
+   ?> <div class="text-center text-primary">  <?php   echo "There are no alert issued by government."; ?>    </div> <?php  
+}
+?>

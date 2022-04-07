@@ -1,0 +1,18 @@
+<main class="form-signup text-center " style="padding-left:35%;padding-right:35%; margin-top:30vh">
+
+    <?php echo $this->tag->form("index/displayAll"); ?>
+    <h1 class="h3 mb-3 fw-normal">Enter Location</h1>
+
+    <div class="form-floating">
+        <?php echo $this->tag->textField(["input1", "class" => "form-control ", "required" => "true"]); ?>
+        <label for="name">Name of the place</label>
+    </div>
+<br>
+
+    <div class="form-floating">
+        <?php echo $this->tag->submitButton(
+            ["Get locations", "class" => "py-2 w-100 btn btn-lg btn-primary"]
+        ); ?>
+    </div>
+    </form>
+</main>

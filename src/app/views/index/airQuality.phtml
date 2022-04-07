@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="../../../public/assets/style3.css">
+<div class="justify-content-center d-flex  px-3">
+    <div class="col-lg-6">
+        <div class="card"> <img class="" src="https://i.imgur.com/a9sHoeY.jpg" alt="Card image cap">
+            <div class="card-img-overlay" style="height:110px;">
+                <h3 class="card-title text-white m-b-0 dl"><?php echo $data->location->name ?></h3>
+                 <small class="card-text text-white font-light"><?php echo date("F j, Y",strtotime($data->location->localtime)) ?></small>
+            </div>
+            <div class="card-body ">
+                <div class="row">
+                    <div class="b-r align-self-center">
+                        
+                                 <h2>Air Quality</h2>
+                                 <div class="row"> <p><b>Carbon Monoxide:</b> <?php echo $quality["co"]?></p></div>
+                                 <div class="row">  <p><b>Nitrogen-di-oxide:</b> <?php echo $quality["no2"]?></p></div>
+                                 <div class="row">  <p><b>Ozone:</b> <?php echo $quality["o3"]?></p></div>
+                                 <div class="row">  <p><b>Sulphor-di-oxide:</b> <?php echo $quality["so2"]?></p></div>
+                                 <div class="row"> <p><b>Fine particulate matter:</b> <?php echo $quality["pm2_5"]?></p></div>
+                                 <div class="row">  <p><b> Particulate Matter:</b> <?php echo $quality["pm10"]?></p></div>
+                                 <div class="row">   <p><b> Air Quality Index:</b> <?php echo $quality["us-epa-index"]?></p></div>              
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <br>
+<div class = "justify-content-center d-flex  px-3">
+<?php include('footer.phtml'); ?>
+</div>

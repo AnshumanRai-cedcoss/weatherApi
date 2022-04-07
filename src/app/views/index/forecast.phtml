@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="../../../public/assets/style4.css">
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-9 left">
+                <div class="row">
+                    <div class="col-7 temp"><?php echo $data["current"]["temp_c"]?>&deg;</div>
+                    <div class="col-5 time">
+                        <h2>Time:<?php echo " ".date("H-i",strtotime($data["location"]["localtime"])) ?></h2>
+                        <p><?php echo $data["current"]["condition"]["text"]?></p>
+                    </div>
+                </div>
+                <div class="row bottom">
+                    <div class="col">
+                    <h1><?php echo $data["location"]["name"]?></h1>
+                    </div>
+                    
+                    <div class="col">
+                       <h1><?php echo date("F j, Y",strtotime($data["location"]["localtime"])) ?></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 right">
+                <div class="row top">For next 6 hours</div>
+                <div class="timely">
+                    
+                    <?php
+                  $d = $data["forecast"]["forecastday"][0]["hour"];
+                    for ($i=$hour; $i < $hour+6; $i++) { 
+                        if(isset($d[$i]))
+                        {
+                        ?>
+                    
+                        <div class="row"><?php echo $i?>:00 &nbsp; <b><?php echo $d[$i]["temp_c"]?>&deg;</b></div>
+                    
+                 <?php   }  }   ?>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include('footer.phtml'); ?>
+</div>

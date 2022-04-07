@@ -1,0 +1,16 @@
+<?php 
+foreach ($data as $key => $value) { 
+    if($key == "golf")
+    {
+        continue ;
+    }
+    ?>
+
+<p><b><?php echo $key?></b>:<?php if(count($value) > 0) print_r($value);
+   else echo "Nothing to show" ;?></p>
+
+<?php 
+} ?> 
+ <div class = "justify-content-center d-flex  px-3">
+   <?php include('footer.phtml'); ?>
+   </div>

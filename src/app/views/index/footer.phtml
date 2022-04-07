@@ -1,0 +1,51 @@
+<?php
+    $url = $this->request->get('url');
+    echo $this->tag->linkTo([
+     "index/productDetail?url=$url",
+     'Current whether',
+     'class' => 'm-2 btn btn-danger'
+    ]
+);
+   ?> <?php 
+echo $this->tag->linkTo([
+     "index/forecast?url=$url",
+     'Forecast',
+     'class' => 'm-2 btn btn-success'
+    ]
+);
+echo $this->tag->linkTo([
+     "index/history?url=$url",
+     'History',
+     'class' => 'm-2 btn btn-danger'
+    ]
+); 
+echo $this->tag->linkTo([
+     "index/timezone?url=$url",
+     'Time-zone',
+     'class' => 'm-2 btn btn-warning'
+    ]
+);
+echo $this->tag->linkTo([
+    "index/sports?url=$url",
+     'Sports',
+    'class' => 'm-2 btn btn-success'
+]
+); 
+echo $this->tag->linkTo([
+    "index/astronomy?url=$url",
+     'Astronomy',
+    'class' => 'm-2 btn btn-primary'
+]
+); 
+echo $this->tag->linkTo([
+    "index/airQuality?url=$url",
+     'Air Quality',
+    'class' => 'm-2 btn btn-warning'
+]
+); 
+echo $this->tag->linkTo([
+    "index/alert?url=$url",
+     'Whether Alerts',
+    'class' => 'm-2 btn btn-danger'
+]
+);?>

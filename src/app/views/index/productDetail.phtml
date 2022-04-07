@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="../../../public/assets/style2.css">
+<div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+    <div class="row d-flex justify-content-center px-3">
+        <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0"><?php echo $data->location->name?></h2>
+            <p class="ml-auto mr-4 mb-0 med-font"><?php echo $data->current->condition->text ?></p>
+            <h1 class="ml-auto mr-4 large-font"><?php echo $data->current->temp_c ?>&#176;C</h1>
+            <p class="time-font mb-0 ml-4 mt-auto"> <?php echo " ".date("H-i",strtotime($data->location->localtime)) ?></p>
+            <p class="ml-4 mb-4"><?php echo date("F j, Y",strtotime($data->location->localtime)) ?></p>
+        </div>
+    </div>
+   <div class = "justify-content-center d-flex  px-3">
+   <?php include('footer.phtml'); ?>
+   </div>
+</div>

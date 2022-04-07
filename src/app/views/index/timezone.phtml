@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="../../../public/assets/styl1.css">
+<div class="container d-flex justify-content-center">
+ 
+    <ul class="list-group mt-5 text-white">
+    <h2 class="text-center">Current Timezone</h2>
+       
+        <a href="productDetail?url=<?php echo $value->url?>">
+        <li class="list-group-item d-flex justify-content-between align-content-center">
+                <div class="ml-2">
+                    <h6 class="mb-0"></h6>
+                    <p class="mb-0"><b>Current Timezone:</b><?php echo " ".$data["location"]["tz_id"]?></p>
+                    <p class="mb-0"><b>City:</b><?php echo " ".$data["location"]["name"]?></p>
+                    <p class="mb-0"><b>Region:</b><?php echo " ".$data["location"]["region"]?></p>
+                    <p class="mb-0"><b>Country:</b><?php echo " ".$data["location"]["country"]?></p>
+              
+            </div>
+        </li>
+        </a>
+       
+    </ul>
+</div>
+<div class="d-flex justify-content-center">
+<?php include('footer.phtml'); ?>
+</div>

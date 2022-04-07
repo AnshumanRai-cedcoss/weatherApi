@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="../../../public/assets/style5.css">
+<div class="container d-flex justify-content-center">
+    <div class="weather">
+        <?php for ($i=0; $i < (count($data)-1); $i+=2) { 
+        ?>
+        <div class="row">
+            <div class=" col-md-6">
+                <div class="card"> <span class="icon"><img class="img-fluid" src="<?php echo $data[$i]["day"]["condition"]["icon"]; ?>" /></span>
+                    <div class="title">
+                        <p><?php echo date('D', strtotime($data[$i]["date"])); ?></p>
+                    </div>
+                    <div class="temp"><?php echo $data[$i]["day"]["avgtemp_c"]; ?><sup>&deg;</sup></div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="header">General</div>
+                            <div class="value"><?php echo $data[$i]["day"]["condition"]["text"]; ?></div>
+                        </div>
+                        <div class="col-4">
+                            <div class="header">Humidity</div>
+                            <div class="value"><?php echo $data[$i]["day"]["avghumidity"]; ?></div>
+                        </div>
+                        <div class="col-4">
+                        <div class="header">Wind</div>
+                            <div class="value"><?php echo $data[$i]["day"]["maxwind_kph"]; ?>km/h</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card"> <span class="icon"><img class="img-fluid" src="<?php echo $data[$i+1]["day"]["condition"]["icon"]?>" /></span>
+                    <div class="title">
+                        <p><?php echo date('D', strtotime($data[$i+1]["date"])); ?></p>
+                    </div>
+                    <div class="temp"><?php echo $data[$i+1]["day"]["avgtemp_c"]; ?><sup>&deg;</sup></div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="header">General</div>
+                            <div class="value"><?php echo $data[$i+1]["day"]["condition"]["text"]; ?></div>
+                        </div>
+                        <div class="col-4">
+                        <div class="header">Humidity</div>
+                            <div class="value"><?php echo $data[$i+1]["day"]["avghumidity"]; ?></div>
+                        </div>
+                        <div class="col-4">
+                            <div class="header">Wind</div>
+                            <div class="value"><?php echo $data[$i+1]["day"]["maxwind_kph"]; ?>km/h</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+    </div>
+<br>
+    <div id = "btn"  class= "row m-2 p-2" style="width: 12%; height:70vh;">
+    <?php include('footer.phtml'); ?>
+   </div>
+
+
+
+
