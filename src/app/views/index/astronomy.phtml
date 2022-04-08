@@ -1,18 +1,18 @@
-<link rel="stylesheet" href="../../../public/assets/style2.css">
+<link rel="stylesheet" href="../../../public/assets/css/style2.css">
 <div class="justify-content-center d-flex  px-3">
-      <?php include('header.phtml'); ?>
- </div>
+    <?php include('header.phtml'); ?>
+</div>
 
 <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
     <div class="row d-flex justify-content-center px-3">
         <?php $time =  (int)date("H", strtotime($data["location"]["localtime"]));
 
-        if ($time < 11) { ?>
+        if ($time <= 11 && $time > 7) { ?>
             <div class="card text-body" style="background-image:url('https://images.unsplash.com/photo-1508717334315-37b159f24d04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vcm5pbmclMjBza3l8ZW58MHx8MHx8&w=1000&q=80')">
-            <?php  } else if ($time <= 15) { ?>
+            <?php  } else if ($time <= 15 && $time > 11) { ?>
                 <div class="card text-white" style="background-image:url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/magic-noon-sky-sun-greece-chris-pappas.jpg') ">
-                <?php } else if ($time <= 18) { ?>
-                    <div class="card text-body" style="background-image:url('https://images.unsplash.com/photo-1558985039-0810bf498163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbmluZyUyMHNreXxlbnwwfHwwfHw%3D&w=1000&q=80') ">
+                <?php } else if ($time <= 18 & $time > 15) { ?>
+                    <div class="card text-white" style="background-image:url('https://images.unsplash.com/photo-1558985039-0810bf498163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbmluZyUyMHNreXxlbnwwfHwwfHw%3D&w=1000&q=80') ">
 
                     <?php } else { ?>
 
